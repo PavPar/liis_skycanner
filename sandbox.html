@@ -7,6 +7,9 @@
 </head>
 <style>
     @import url("./plane-app/src/vendor/normalize.css");
+    @import url("./plane-app/src/fonts/Abel/font_abel.css");
+    @import url("./plane-app/src/fonts/SFProText/font_SfProText.css");
+
 
     .card {
         max-width: 335px;
@@ -15,10 +18,11 @@
         height: 100%;
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
         border-radius: 8px;
-        padding: 19px 17px 14px 20px;
+        padding: 19px 17px 9px 20px;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+        position: relative;
     }
 
     .card__image {
@@ -39,7 +43,7 @@
         display: grid;
         grid-template-columns: 1fr 4fr;
         grid-template-rows: repeat(3, 1fr);
-        column-gap:20px;
+        column-gap: 20px;
     }
 
     .card__title {
@@ -50,6 +54,7 @@
         line-height: 22px;
         letter-spacing: -0.408px;
         color: #000000;
+        min-width: 64px;
     }
 
     .card__subtitle {
@@ -77,7 +82,7 @@
     }
 
     .card__text_font-abel {
-        font-family: Abel;
+        font-family: "Abel";
     }
 
     .card__text_size-small {
@@ -96,25 +101,80 @@
     .card__body {
         display: flex;
         justify-content: right;
+        display: -webkit-flex;
+        -webkit-justify-content: flex-end;
     }
 
     .card__textbox {
+        position: relative;
         justify-content: center;
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap:8px;
+        grid-template-columns: 1fr 3fr;
+        gap: 8px;
         max-width: 110px;
         width: 100%;
-        overflow: visible;
+        align-items: baseline;
+    }
+
+    .card__textbox_ver-2 {
+        justify-content: left;
+        display: flex;
+        width: 100%;
+        max-width: none;
+        align-items: baseline;
+    }
+
+
+    .card__textseperator {
+        width: 12px;
+        height: 8px;
+        background-image: url(./plane-app/src/images/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0px 4px;
+
+    }
+
+    .card__textseperator_ver-2 {
+        width: 9px;
+        height: 1px;
+        background: black;
+        box-sizing: border-box;
+        align-self: center;
+        margin: 0px -2px;
+    }
+
+    .card__like {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(./plane-app/src/images/like-active.svg);
+        border:none;
+        background-color: unset;
+        width: 18px;
+        height: 16px;
+        right: 12px;
+        top:15px;
     }
 </style>
 
 <body>
     <div class="card">
+        <button class="card__like"></button>
         <div class="card__head">
             <div class="card__image planelogo"></div>
-            <h2 class="card__title">Moscow New York</h2>
-            <p class="card__subtitle">VKO - 28 June, 2020 - 14:50</p>
+            <div class="card__textbox card__textbox_ver-2">
+                <p class="card__title">Moscow</p>
+                <p class="card__textseperator"></p>
+                <p class="card__title">New York</p>
+            </div>
+            <div class="card__textbox card__textbox_ver-2">
+                <p class="card__subtitle">VKO</p>
+                <p class="card__textseperator card__textseperator_ver-2"></p>
+                <p class="card__subtitle">28 June, 2020</p>
+                <p class="card__textseperator card__textseperator_ver-2"></p>
+                <p class="card__subtitle">14:50</p>
+            </div>
             <p class="card__subtitle">Aeroflot</p>
         </div>
         <hr class="card__breakline">
