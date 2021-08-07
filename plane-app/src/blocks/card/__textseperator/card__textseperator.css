@@ -1,0 +1,9 @@
+.card__textseperator {
+    width: 12px;
+    height: 8px;
+    background-image: url(../../../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px 12px;
+
+}

@@ -1,0 +1,6 @@
+.card__body {
+    display: flex;
+    justify-content: right;
+    display: -webkit-flex;
+    -webkit-justify-content: flex-end;
+}

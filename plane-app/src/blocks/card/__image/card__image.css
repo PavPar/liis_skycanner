@@ -1,0 +1,10 @@
+.card__image {
+    background-color: rgba(0, 119, 255, 0.05);
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-image: url("../../../images/plane\ 1.svg");
+    grid-row: 1/-1;
+}

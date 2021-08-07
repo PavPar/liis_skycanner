@@ -1,0 +1,29 @@
+@import url(./__image/card__image.css);
+@import url(./__head/card__head.css);
+@import url(./__title/card__title.css);
+@import url(./__subtitle/card__subtitle.css);
+@import url(./__breakline/card__breakline.css);
+@import url(./__text/card__text.css);
+@import url(./__body/card__body.css);
+@import url(./__textbox/card__textbox.css);
+@import url(./__textbox/_sep/card__textbox_sep-multiple.css);
+@import url(./__textseperator/card__textseperator.css);
+@import url(./__textseperator/_sep/card__textseperator_sep-multiple.css);
+@import url(./__like/card__like.css);
+@import url(./__like/_state/card__like_state-active.css);
+
+.card {
+    background-color: white;
+    max-width: 335px;
+    max-height: 135px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 19px 17px 9px 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+  z-index: 2;
+}

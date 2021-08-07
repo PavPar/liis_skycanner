@@ -1,0 +1,8 @@
+@import url(./_font/card__text_font-abel.css);
+@import url(./_size/card__text_size-small.css);
+@import url(./_size/card__text_size-large.css);
+
+.card__text {
+    font-family: SF Pro Text;
+    color: #000000;
+}
