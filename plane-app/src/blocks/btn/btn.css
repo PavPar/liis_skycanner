@@ -1,0 +1,10 @@
+@import url(./__like/btn_type-like.css);
+@import url(./__like/_state/btn_type-like_state-active.css);
+.btn {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: unset;
+}

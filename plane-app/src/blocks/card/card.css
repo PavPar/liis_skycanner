@@ -10,7 +10,6 @@
 @import url(./__textseperator/card__textseperator.css);
 @import url(./__textseperator/_sep/card__textseperator_sep-multiple.css);
 @import url(./__like/card__like.css);
-@import url(./__like/_state/card__like_state-active.css);
 
 .card {
     background-color: white;

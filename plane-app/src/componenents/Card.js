@@ -4,7 +4,9 @@ export default function Card() {
 
     return (
         <div className="card">
-            <button className="card__like"></button>
+            <div className="card__like">
+                <button className="btn btn_type-like"></button>
+            </div>
             <div className="card__head">
                 <div className="card__image"></div>
                 <div className="card__textbox card__textbox_sep-multiple">

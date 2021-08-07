@@ -1,12 +1,14 @@
 import Card from './componenents/Card';
 import CardGrid from './componenents/CardGrid'
 import NavBar from './componenents/NavBar'
+import Popup from './componenents/Popup'
 function App() {
   return (
     <>
-      <NavBar>
-
-      </NavBar>
+    <Popup></Popup>
+    {/* <Card /> */}
+    
+      {/* <NavBar/>
       <CardGrid>
         <Card />
         <Card />
@@ -18,7 +20,7 @@ function App() {
         <Card />
         <Card />
         <Card />
-      </CardGrid>
+      </CardGrid> */}
     </>
   );
 }

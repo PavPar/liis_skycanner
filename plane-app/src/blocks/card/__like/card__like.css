@@ -1,11 +1,5 @@
-.card__like {
+.card__like{
     position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../../images/like.svg);
-    border:none;
-    background-color: unset;
     width: 18px;
     height: 16px;
     right: 12px;
