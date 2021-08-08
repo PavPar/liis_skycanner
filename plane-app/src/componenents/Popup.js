@@ -1,12 +1,21 @@
 import React from 'react';
+import {useState} from 'react';
+import image from '../images/popup-background.png'
+export default function Popup({isAlreadyLiked = false, isVisible, handleClose, onCardLike }) {
+    const [isLiked, setLiked] = useState(isAlreadyLiked)
 
-export default function NavBar() {
+    function handleCardLike(e) {
+        setLiked(!isLiked)
+        onCardLike({isLiked:!isLiked})//pass cardData
+        e.stopPropagation();
+    }
 
     return (
-        <div className="popup">
+        <div className={`popup ${!isVisible ? "popup__visibility-none" : ""}`}>
+            <img className="popup__background" src={image} onClick={handleClose}></img>
             <div className="popup__body">
                 <div className="popup__like">
-                    <div className="btn btn_type-like"></div>
+                    <button className={`btn btn_type-like ${isLiked ? "btn_type-like_state-active " : ""}`} onClick={handleCardLike}></button>
                 </div>
                 <div className="popup__header">
                     <ul className="popup__list">
@@ -32,7 +41,7 @@ export default function NavBar() {
                             <li className="popup__listelement popup__listelement_color-white">Boarding</li>
                             <li className="popup__listelement popup__listelement_size-big popup__listelement_font-abel popup__listelement_color-white">19:20</li>
                         </ul>
-                        
+
                     </button>
                     <div className="roundabout">
                         <img className="roundabout__image"></img>

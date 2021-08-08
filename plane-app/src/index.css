@@ -5,6 +5,7 @@
 @import url("./blocks/btn/btn.css");
 #root {
   max-width: 375px;
+  min-height: 100vh;
   background-color: #F8F8F8;
   position: relative;
 }
@@ -87,18 +88,29 @@ body {
   position: sticky;
   background-color: papayawhip;
   z-index: 10;
-  background-image: url(./images/popup-background.png);
+  top:0;
+  /* background-image: url(./images/popup-background.png);
+  background-repeat: no-repeat;
+  background-size: contain; */
+}
+
+.popup__background{
+  width: 100%;
+  height: 50vh;
+}
+
+.popup__visibility-none{
+  display: none;
 }
 
 .popup__body {
   background-color: white;
   position: absolute;
   bottom: 0;
-  height: 58vh;
   z-index: 11;
   width: 100%;
   border-radius: 7% 7% 0 0;
-  padding: 30px;
+  padding: 30px 30px 35px 30px;
   box-sizing: border-box;
 }
 
@@ -108,7 +120,7 @@ body {
   right: 23px;
   width: 20px;
   height: 17px;
-  z-index: 12;
+  z-index: 13;
 }
 
 .popup__header {
