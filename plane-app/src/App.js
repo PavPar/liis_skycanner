@@ -84,14 +84,12 @@ function App() {
   }
 
   useEffect(() => {
-    // dispatch(setCardsArray([{ isLiked: true }, { isLiked: false }]))
     const { months, days } = getFlightDates();
 
     months.forEach(month => {
       getFlightForMonth(format(month, 'yyyy-MM'))
         .then(flights => transformFlightInfo(flights))
         .then(flights => {
-          console.log(flights)
           return flights.filter(flight => {
             return days.includes(flight.departureDate)
           })

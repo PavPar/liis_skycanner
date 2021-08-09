@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import image from '../images/popup-background.png'
 import { format } from 'date-fns'
-
+import image1 from '../images/image-1.png'
+import image2 from '../images/image-2.png'
+import image3 from '../images/image-3.jpg'
 export default function Popup({displayingCardData={}, isVisible, handleClose, onCardLike }) {
     const {isLiked,cardData} = displayingCardData
     const [isCardLiked, setCardLiked] = useState(isLiked)
 
     useEffect(()=>{
         setCardLiked(displayingCardData.isLiked)
-        console.log(displayingCardData.isLiked)
     },[displayingCardData])
 
     function handleCardLike(e) {
@@ -26,7 +27,6 @@ export default function Popup({displayingCardData={}, isVisible, handleClose, on
         destinationAirport,
         origin,
         originAirport,
-        carrier,
         QuoteTime
     } = cardData||{};
 
@@ -83,9 +83,9 @@ export default function Popup({displayingCardData={}, isVisible, handleClose, on
 
                     </button>
                     <div className="roundabout">
-                        <img className="roundabout__image"></img>
-                        <img className="roundabout__image"></img>
-                        <img className="roundabout__image"></img>
+                        <img className="roundabout__image" src={image1}></img>
+                        <img className="roundabout__image" src={image2}></img>
+                        <img className="roundabout__image" src={image3}></img>
                     </div>
                 </div>
             </div>
