@@ -1,0 +1,6 @@
+.card__head {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 20px;
+}

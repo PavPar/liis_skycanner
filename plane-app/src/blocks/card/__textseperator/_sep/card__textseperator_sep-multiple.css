@@ -1,0 +1,8 @@
+   .card__textseperator_sep-multiple {
+       width: 9px;
+       height: 1px;
+       background: black;
+       box-sizing: border-box;
+       align-self: center;
+       margin: 0px 5px;
+   }
