@@ -11,10 +11,18 @@ export const cardSlice = createSlice({
         setCardsArray: (state,action) => {
             state.value = action.payload;
         },
+        setCardLike:(state,action) =>{
+            state.value = state.value.map(card=>{
+                if(card.id == action.payload.cardData.id){
+                  card.isLiked = action.payload.isLiked;
+                }
+                return card;
+              })
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setCardsArray } = cardSlice.actions
+export const { setCardsArray,setCardLike } = cardSlice.actions
 
 export default cardSlice.reducer

@@ -6,14 +6,14 @@ import CardGrid from './componenents/CardGrid'
 import NavBar from './componenents/NavBar'
 import Popup from './componenents/Popup'
 import { useSelector, useDispatch } from 'react-redux'
-import { setCardsArray } from './redux/cards'
+import { setCardsArray,setCardLike } from './redux/cards'
 import { addDays, format } from 'date-fns'
 
 function App() {
   const [isPopupVisible, setPopupVisible] = useState(false)
   const [displayLiked, setDisplayLiked] = useState(false)
 
-  const [displayedCards, setDisplayedCards] = useState([])
+  const [displayingCardData, setDisplaingCardData] = useState({})
 
   function getFlightDates(startDate = new Date()) {
     const months = [];
@@ -84,7 +84,7 @@ function App() {
   }
 
   useEffect(() => {
-    dispatch(setCardsArray([{ isLiked: true }, { isLiked: false }]))
+    // dispatch(setCardsArray([{ isLiked: true }, { isLiked: false }]))
     const { months, days } = getFlightDates();
 
     months.forEach(month => {
@@ -108,12 +108,8 @@ function App() {
   const cards = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
-  function handleCardLike({ isLiked }) {
-    if (isLiked) {
-      dispatch(setCardsArray([...cards, { isLiked: true }]))
-    } else {
-      dispatch(setCardsArray(cards.slice(0, cards.length - 1)))
-    }
+  function handleCardLike({ isLiked, cardData }) {
+    dispatch(setCardLike({ isLiked, cardData }))
   }
 
   return (
@@ -122,6 +118,7 @@ function App() {
         isVisible={isPopupVisible}
         handleClose={() => { setPopupVisible(false) }}
         onCardLike={handleCardLike}
+        displayingCardData={displayingCardData}
       />
       <NavBar setDisplayLiked={setDisplayLiked} />
       <CardGrid>
@@ -133,7 +130,7 @@ function App() {
             return <Card
               key={cardData.id}
               cardData={cardData}
-              onCardClick={() => { setPopupVisible(true) }}
+              onCardClick={({cardData,isLiked}) => { setDisplaingCardData({cardData,isLiked}); setPopupVisible(true) }}
               onCardLike={handleCardLike}
               isAlreadyLiked={cardData.isLiked || false}
             />
