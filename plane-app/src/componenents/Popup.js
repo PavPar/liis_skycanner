@@ -15,7 +15,7 @@ export default function Popup({displayingCardData={}, isVisible, handleClose, on
 
     function handleCardLike(e) {
         setCardLiked(!isLiked)
-        onCardLike({isLiked:!isLiked,cardData})//pass cardData
+        onCardLike({isLiked:!isLiked,cardData})
         e.stopPropagation();
     }
 
